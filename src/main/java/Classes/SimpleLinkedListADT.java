@@ -24,11 +24,12 @@ public class SimpleLinkedListADT implements Interface {
         this.head = head;
     } 
     public void print(){
+        
 
        Node current = getHead();
 
        do{
-            System.out.println("-"+current.getStudents());
+            System.out.println("nombre: "+current.getStudents().getName()+" /edad: "+current.getStudents().getAge());
             current = current.getNext();
 
        }while(current != null);

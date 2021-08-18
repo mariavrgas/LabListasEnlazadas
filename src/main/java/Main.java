@@ -24,12 +24,12 @@ public class Main {
         
         catalogue.add("maria", 12);
         catalogue.add("mar", 13);
-        catalogue.add("pedrito", 13);
-        System.out.println("lista estudiantes"+get.Node);
+        catalogue.add("pedrito", 13);   
+        
         catalogue.print();
         
         System.out.println("REMOVE-------");
-        catalogue.remove(1);
+        catalogue.remove(0);
         catalogue.print();
       
 
