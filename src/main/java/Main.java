@@ -25,9 +25,7 @@ public class Main {
         catalogue.add("maria", 12);
         catalogue.add("mar", 13);
         catalogue.print();
-        
-        catalogue.remove(1);
-        catalogue.print();
+      
 
     }
 
