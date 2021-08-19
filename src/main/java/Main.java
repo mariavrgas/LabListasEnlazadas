@@ -40,8 +40,13 @@ public class Main {
         
         System.out.println("---------- GET FIRST --------------");
         
-        System.out.println("first"+catalogue.getFirst(0));
-        catalogue.getFirst(0);
+        System.out.println("Nombre:   "+catalogue.getFirst().getStudents().getName()
+                +" /Edad:  "+catalogue.getFirst().getStudents().getAge());
+
+        System.out.println("---------- GET LAST --------------");
+        
+        System.out.println("Nombre:   "+catalogue.getLast().getStudents().getName()
+                +" /Edad:  "+catalogue.getLast().getStudents().getAge());
         
         
         

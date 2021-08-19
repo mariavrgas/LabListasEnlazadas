@@ -135,15 +135,28 @@ public class SimpleLinkedListADT implements Interface {
         }
 
     }
-    public Node getFirst(int index) throws Exception{
+    @Override
+    public Node getFirst() throws Exception{
         
         if (head == null) {
             throw new Exception("No elements found in Linked List");
         }
         return head;
     }
-    
-
+    @Override
+     public Node getLast() throws Exception{
+        
+         if(head == null ) {
+            throw new Exception("No elements found in Linked List");
+        }
+        Node temp = head;
+        while(temp.getNext().getNext() != null) {
+            temp = temp.next;}
+            temp.next = null;
+ 
+        return head;
+        }
+    }
 
 }
 

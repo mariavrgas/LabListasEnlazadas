@@ -16,6 +16,7 @@ public interface Interface {
     public void clear();
     public void remove(int index);
     public Node getFirst(int index) throws Exception; 
+    public Node getLast() throws Exception;
     
  
     
