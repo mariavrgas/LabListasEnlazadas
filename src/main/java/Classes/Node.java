@@ -12,8 +12,8 @@ package Classes;
  */
 public class Node {
     
-    private Students students;
-    private Node next;
+    Students students;
+    Node next;
 
     public Node getNext() {
         return next;

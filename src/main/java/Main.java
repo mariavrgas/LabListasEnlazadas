@@ -8,7 +8,7 @@
 import Classes.SimpleLinkedListADT;
 
 
- import java.util.LinkedList;
+import java.util.LinkedList;
 import java.util.Collections;
 /**
  *
@@ -23,16 +23,14 @@ public class Main {
       
         System.out.println("-------- METHOD ADD -------------");
         catalogue.add("maria", 12);
-        catalogue.add("mar", 13);
+        catalogue.add("daniel", 13);
         catalogue.add("pedrito", 13);   
         catalogue.add("pedro", 13);
         catalogue.print();
         
         System.out.println("--------- METHOD FIND ---------------");
-        catalogue.find(1);
-        System.out.println("prueba find: "+catalogue.find(1).getStudents().getName());
-        catalogue.print();
-      
+        System.out.println("prueba find: "+catalogue.find(1).getStudents().getName()
+                +" /Edad:  "+catalogue.find(1).getStudents().getAge());
         
         System.out.println("------------ REMOVE-------");
         catalogue.remove(1);
@@ -44,12 +42,17 @@ public class Main {
                 +" /Edad:  "+catalogue.getFirst().getStudents().getAge());
 
         System.out.println("---------- GET LAST --------------");
-        
         System.out.println("Nombre:   "+catalogue.getLast().getStudents().getName()
                 +" /Edad:  "+catalogue.getLast().getStudents().getAge());
         
+        System.out.println("---------------- REMOVE FIRST ---------");
+        catalogue.removeFirst();
+        catalogue.print();
         
         
+        System.out.println("---------------- REMOVE LAST ---------");
+        catalogue.removeLast();
+        catalogue.print();
         
 
         

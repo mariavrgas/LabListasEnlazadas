@@ -1,5 +1,8 @@
 package Classes;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -12,7 +15,7 @@ package Classes;
  */
 public class SimpleLinkedListADT implements Interface {
     
-    private Node head;
+    private Node head ;
     
     private int size = 0;
 
@@ -50,6 +53,10 @@ public class SimpleLinkedListADT implements Interface {
                
        Node node = new Node(student);
        
+       Node recent = head;
+      
+       
+       
        if (this.head == null){
            this.head = node; 
        }else {
@@ -61,58 +68,23 @@ public class SimpleLinkedListADT implements Interface {
 
             last.setNext(node);
        }
-      
-        this.size++;}
-    
-    @Override
-    public Node find(int index){
-        
-        Node current = getHead();
-        int counter = 0;
-
-        if (index >= getSize() || index < 0) {
-            System.out.println("this index doesn't exist");
-        } else if (current == null) {
-            System.out.println("list is empty");
-        } else if (index == 0) {
-            result = this.head.getStudents();
-        } else {
-            do {
-                current = current.getNext();
-                counter++;
-            } while (counter < index);
-
-           return current;
-
+       
+       this.size++;
+       
+        /*while (head.getStudents().getName().compareTo(node.getStudents().getName())> 0 && recent != null){
+           node.setNext()= recent;
+       }while (recent.getStudents().getName().compareTo(node.getStudents().getName())<0){
+           recent.setNext(node);
+       }
+       */
+       
+  
         }
-
-        this.size++;
-        return result;
-    
     @Override
     public void clear(){
         this.head = null;
         this.size = 0;
-        
-       
-        
     }
-    @Override
-    public void obtain(int n){
-        if (head == null){
-            return null          
-        }else {
-            Node current = head;
-            int counter = 0;
-            
-            while (counter < n && current.next != null){
-                current = current.getNext();
-                counter++;
-            }
-        }
-    } 
-    }
-    @Override
     public void remove(int index){
         Node current = getHead();
         int counter = 0;
@@ -144,23 +116,67 @@ public class SimpleLinkedListADT implements Interface {
         return head;
     }
     @Override
-     public Node getLast() throws Exception{
+    public Node getLast() throws Exception{
         
-         if(head == null ) {
+        if(head == null ) {
             throw new Exception("No elements found in Linked List");
         }
-        Node temp = head;
-        while(temp.getNext().getNext() != null) {
-            temp = temp.next;}
-            temp.next = null;
+        Node current = head;
+        while(current.getNext() != null) {
+            current = current.next;}
+            current.next = null;
  
-        return head;
+        return current;}
+        
+    
+
+    @Override
+    public Node find(int index){
+        
+        if (head == null){
+            return null;
+        }else{ 
+            Node current = getHead();
+            int counter = 0;
+            while (counter < index && current != null){
+                current = current.getNext();
+                counter++;
+            }
+            if (counter != index ){
+                return null;
+            }else {
+                return current;
+            }
+        }    
+    }
+    @Override
+    public void removeFirst(){
+        
+        if (head != null) {
+            Node first = head;
+                    head =head.next;
+                    first.next = null;
+                    size--;
         }
     }
-
+                   
+    @Override
+    public void removeLast(){
+        
+        if(head != null){
+            if (head.next == null){
+                head = null;
+            }else {
+                Node current = head ; 
+                while (current.next.next != null){
+                    current = current.next;
+                }
+                current.next = null;
+            }
+        }
+    }
 }
-
-     
+    
    
     
 

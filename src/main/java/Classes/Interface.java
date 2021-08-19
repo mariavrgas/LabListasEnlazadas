@@ -13,10 +13,12 @@ public interface Interface {
     
     public void add(String name , int age);
     public Node find(int index)throws Exception;
-    public void clear();
+    public void clear();  
     public void remove(int index);
-    public Node getFirst(int index) throws Exception; 
+    public Node getFirst() throws Exception; 
     public Node getLast() throws Exception;
+    public void removeFirst();
+    public void removeLast();
     
  
     
