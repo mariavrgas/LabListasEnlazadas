@@ -88,15 +88,6 @@ public class SimpleLinkedListADT implements Interface {
 
         this.size++;
         return result;
-
-    }
-
-    @Override
-    public Node delete(int index) throws Exception{
-        
-        
-    }
-    
     
     @Override
     public void clear(){
@@ -105,6 +96,21 @@ public class SimpleLinkedListADT implements Interface {
         
        
         
+    }
+    @Override
+    public void obtain(int n){
+        if (head == null){
+            return null          
+        }else {
+            Node current = head;
+            int counter = 0;
+            
+            while (counter < n && current.next != null){
+                current = current.getNext();
+                counter++;
+            }
+        }
+    } 
     }
     @Override
     public void remove(int index){
@@ -129,9 +135,18 @@ public class SimpleLinkedListADT implements Interface {
         }
 
     }
+    public Node getFirst(int index) throws Exception{
+        
+        if (head == null) {
+            throw new Exception("No elements found in Linked List");
+        }
+        return head;
+    }
+
+
 }
 
-    
-    
+     
+   
     
 

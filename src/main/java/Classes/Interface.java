@@ -13,10 +13,9 @@ public interface Interface {
     
     public void add(String name , int age);
     public Node find(int index)throws Exception;
-    public Node delete(int index) throws Exception;
     public void clear();
     public void remove(int index);
-
+    public Node getFirst(int index) throws Exception; 
  
     
    

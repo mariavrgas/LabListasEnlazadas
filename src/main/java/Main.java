@@ -38,6 +38,16 @@ public class Main {
         catalogue.remove(1);
         catalogue.print();
         
+        System.out.println("---------- GET FIRST --------------");
+        
+        System.out.println("first"+catalogue.getFirst(0).getStudents());
+                
+        
+
+        
+        
+
+        
         
 
     }
