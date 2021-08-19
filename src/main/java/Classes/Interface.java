@@ -12,9 +12,17 @@ package Classes;
 public interface Interface {
     
     public void add(String name , int age);
-    public Object find(int index);
+    public Node find(int index)throws Exception;
+    public Node delete(int index) throws Exception;
     public void clear();
     public void remove(int index);
+
+ 
+    
+   
+    
+ 
+
     
     
        

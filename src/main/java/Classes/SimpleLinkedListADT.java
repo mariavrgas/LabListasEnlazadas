@@ -29,7 +29,7 @@ public class SimpleLinkedListADT implements Interface {
        Node current = getHead();
 
        do{
-            System.out.println("nombre: "+current.getStudents().getName()+" /edad: "+current.getStudents().getAge());
+            System.out.println("nombre: "+ current.getStudents().getName()+" /edad: "+current.getStudents().getAge());
             current = current.getNext();
 
        }while(current != null);
@@ -60,18 +60,44 @@ public class SimpleLinkedListADT implements Interface {
             }
 
             last.setNext(node);
-       
        }
-       
+      
+        this.size++;}
+    
+    @Override
+    public Node find(int index){
+        
+        Node current = getHead();
+        int counter = 0;
+
+        if (index >= getSize() || index < 0) {
+            System.out.println("this index doesn't exist");
+        } else if (current == null) {
+            System.out.println("list is empty");
+        } else if (index == 0) {
+            result = this.head.getStudents();
+        } else {
+            do {
+                current = current.getNext();
+                counter++;
+            } while (counter < index);
+
+           return current;
+
+        }
 
         this.size++;
+        return result;
+
+    }
+
+    @Override
+    public Node delete(int index) throws Exception{
+        
         
     }
-    @Override
-    public Object find(int index){
-        return null;
-    }
-     
+    
+    
     @Override
     public void clear(){
         this.head = null;
@@ -85,7 +111,7 @@ public class SimpleLinkedListADT implements Interface {
         Node current = getHead();
         int counter = 0;
 
-        if(index >= getSize() || index<0 ){
+        if(index >= getSize() || index < 0 ){
             System.out.println("Index doesn't exist!");
         }else if (index == 0 && current != null) {
             this.head = current.getNext();
@@ -103,8 +129,7 @@ public class SimpleLinkedListADT implements Interface {
         }
 
     }
-        
-    }
+}
 
     
     

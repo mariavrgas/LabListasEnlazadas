@@ -21,17 +21,24 @@ public class Main {
         
         SimpleLinkedListADT catalogue = new SimpleLinkedListADT(); 
       
-        
+        System.out.println("-------- METHOD ADD -------------");
         catalogue.add("maria", 12);
         catalogue.add("mar", 13);
         catalogue.add("pedrito", 13);   
-        
+        catalogue.add("pedro", 13);
         catalogue.print();
         
-        System.out.println("REMOVE-------");
-        catalogue.remove(0);
+        System.out.println("--------- METHOD FIND ---------------");
+        catalogue.find(1);
+        System.out.println("prueba find: "+catalogue.find(1).getStudents().getName());
         catalogue.print();
       
+        
+        System.out.println("------------ REMOVE-------");
+        catalogue.remove(1);
+        catalogue.print();
+        
+        
 
     }
 
