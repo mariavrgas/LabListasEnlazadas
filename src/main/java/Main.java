@@ -24,8 +24,12 @@ public class Main {
         System.out.println("-------- METHOD ADD -------------");
         catalogue.add("maria", 12);
         catalogue.add("daniel", 13);
-        catalogue.add("pedrito", 13);   
-        catalogue.add("pedro", 13);
+        catalogue.add("pedro", 13);   
+        catalogue.add("pedrito", 13);
+        catalogue.print();
+        
+        System.out.println("------------- REMOVE LAST --------------");
+        catalogue.removeLast();
         catalogue.print();
         
         System.out.println("--------- METHOD FIND ---------------");
@@ -45,14 +49,14 @@ public class Main {
         System.out.println("Nombre:   "+catalogue.getLast().getStudents().getName()
                 +" /Edad:  "+catalogue.getLast().getStudents().getAge());
         
-        System.out.println("---------------- REMOVE FIRST ---------");
+        System.out.println("------------REMOVE FIRST --------------");
         catalogue.removeFirst();
         catalogue.print();
         
         
-        System.out.println("---------------- REMOVE LAST ---------");
-        catalogue.removeLast();
-        catalogue.print();
+     
+        
+
         
 
         

@@ -16,7 +16,7 @@ import java.util.logging.Logger;
 public class SimpleLinkedListADT implements Interface {
     
     private Node head ;
-    
+    private Node tail;
     private int size = 0;
 
     public Node getHead() {
@@ -45,6 +45,14 @@ public class SimpleLinkedListADT implements Interface {
     public void setSize(int size) {
         this.size = size;
     }
+        public Node getTail() {
+        return tail;
+    }
+
+    public void setTail(Node tail) {
+        this.tail = tail;
+    }
+  
 
     @Override
     public void add(String name , int age){
@@ -85,6 +93,7 @@ public class SimpleLinkedListADT implements Interface {
         this.head = null;
         this.size = 0;
     }
+    @Override
     public void remove(int index){
         Node current = getHead();
         int counter = 0;
@@ -151,30 +160,29 @@ public class SimpleLinkedListADT implements Interface {
     }
     @Override
     public void removeFirst(){
-        
-        if (head != null) {
-            Node first = head;
-                    head =head.next;
-                    first.next = null;
-                    size--;
-        }
+        head = head.next;
+
     }
-                   
     @Override
-    public void removeLast(){
+    public void removeLast() {
         
-        if(head != null){
-            if (head.next == null){
-                head = null;
-            }else {
-                Node current = head ; 
-                while (current.next.next != null){
-                    current = current.next;
-                }
-                current.next = null;
-            }
-        }
-    }
+       if(head == null) {  
+            System.out.println("List is empty");  
+             
+        } 
+         Node last = head;
+         Node previus = null;
+         
+         while(last.next != null ){
+             previus = last;
+             last = last.next;
+         }
+         previus.next = null;
+          
+        
+    }  
+
+
 }
     
    
