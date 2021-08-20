@@ -61,9 +61,7 @@ public class SimpleLinkedListADT implements Interface {
                
        Node node = new Node(student);
        
-       Node recent = head;
-      
-       
+       Node recent = getHead();
        
        if (this.head == null){
            this.head = node; 
@@ -78,15 +76,6 @@ public class SimpleLinkedListADT implements Interface {
        }
        
        this.size++;
-       
-        /*while (head.getStudents().getName().compareTo(node.getStudents().getName())> 0 && recent != null){
-           node.setNext()= recent;
-       }while (recent.getStudents().getName().compareTo(node.getStudents().getName())<0){
-           recent.setNext(node);
-       }
-       */
-       
-  
         }
     @Override
     public void clear(){
@@ -177,9 +166,7 @@ public class SimpleLinkedListADT implements Interface {
              previus = last;
              last = last.next;
          }
-         previus.next = null;
-          
-        
+         previus.next = null;      
     }  
 
 
