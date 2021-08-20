@@ -15,51 +15,26 @@ import javax.swing.JOptionPane;
  */
 public class Menu {
     public static void main(String[] args) {
+        int option = 0;  String op="";
         
-        Scanner sn = new Scanner(System.in);
-        
-        boolean salir = false;
-        int option
-        
-        while(!salir){
-            System.out.println("1.-Agregar Estudiante");
-            System.out.println("2.-Buscar Por Indice");
-            System.out.println("3.-Eliminar Por Indice");
-            System.out.println("4.-obtener el Primero");
-            System.out.println("5.-obtener el ultimo");
-            System.out.println("6.-Eliminar el Primero");
-            System.out.println("7.-Eliminar el ultimo");
-            System.out.println("8.-Vaciar el listado");
-            System.out.println("0.-Cerrar");
+        op=JOptionPane.showInputDialog("SELECCIONE ALGUNA DE LAS SIGUIENTES OPCIONES: \n "
+                +" 1.-Agregar Estudiante\n"
+                +" 2.-Buscar Por Indice\n"
+                +" 3.-Eliminar Por Indice\n"
+                +" 4.-obtener el Primero\n"
+                +" 5.-obtener el ultimo\n"
+                +" 6.-Eliminar el Primero\n"
+                +" 7.-Eliminar el ultimo\n"
+                +" 8.-Vaciar el listado\n"
+                +" 0.-Carrar");
+        option=Integer.parseInt(op);
+        switch(option){
+            case 1:add();break;
+            case 2:
             
-            System.out.println("INGRESE UNA OPCION: ");
-            option = sn.nextInt();
-            
-            switch(option){
-                case 1:
-                    break;
-                case 2:
-                    break;
-                case 3:
-                    break;    
-                case 4:
-                    break;
-                case 5:
-                    break;    
-                case 6:
-                    break; 
-                case 7:
-                    break;
-                case 8:
-                    break; 
-                case 0:
-                    salir = true;
-                    break;
-                default:
-                    System.out.println("las opciones son entre 1 - 8");
-                    
-            }
-        }    
+        }
     }
+         
+       
   
 }
